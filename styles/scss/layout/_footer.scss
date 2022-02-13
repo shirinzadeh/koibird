@@ -27,6 +27,10 @@
       li:not(:last-child) a{
          padding-right: 3rem;
 
+         @media screen and (max-width:1500px) {
+            padding-right: 1.5rem;
+         }
+
          @include large {
             padding-bottom: .5rem;
             padding-right: 0;

@@ -128,8 +128,6 @@ function carouselize(carousel) {
   let leftNav = carousel.querySelector('.js-carousel-nav-left');
   leftNav.addEventListener('click', moveRight);
 
-  let moveLeftAgain = true;
-
   function moveLeft() {
     if ( moving ) {
       moving = false;

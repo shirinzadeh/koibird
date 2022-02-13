@@ -1,0 +1,133 @@
+//COlors
+.bg-primary {
+   background-color: $primary !important;
+}
+
+//Typography
+.h4 {
+   font-size: 1.375rem; //22px
+   line-height: 1.625rem; //26px
+   letter-spacing: 0.07em;
+
+   @include small {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      letter-spacing: 0.02em;
+   }
+}
+
+.h6 {
+   line-height: 1.1875rem;
+   letter-spacing: .07em;
+}
+
+//Sizes
+.pb-30 {
+   padding-bottom: 30px;
+}
+
+/* SIDE MENU ON MOBILE */
+.side-menu {
+   @include flex;
+   flex-basis: 75.98%;
+
+   @include large {
+      flex: 1;
+   }
+
+   .navbar-nav {
+      justify-content: space-between;
+   }
+
+   .container {
+      display: block; //Bootstrap4 default is flex
+      @media (min-width: 768px) {
+         padding:0;
+         max-width: 100%;
+      }
+   }
+
+   @include medium {
+      position: fixed;
+      top: -1000px;
+      left: 0px;
+      width: 100%;
+      // height: 0;
+      background-color: $black;
+      z-index: 9999;
+      @include transition(all .5s ease);
+      overflow-y: scroll;
+      height: 100%;
+
+      
+      &__inner {
+         padding: 1.5rem 0;
+      }
+
+      .navbar-nav {
+         border-bottom: 1px solid rgba($white,.12);
+         .nav-item {
+            padding: 1.5rem 0;
+   
+            @include small {
+               padding-bottom: 1.5rem;
+            }
+         }
+      }
+
+      .nav-link,
+      .dropdown-item {
+         color: $white;
+      }
+   
+      .dropdown-menu {
+         > div {
+            justify-content: space-between ;
+            padding: 1rem !important;
+            background-color: rgba($black, .8);
+         }
+      }
+   }
+
+   .side-menu__head {
+      @include flex-btwn;
+      align-items: center;
+      padding: 1.25rem 0;
+
+      .i-close {
+         color: $white;
+         font-size: 1.5rem;
+      }
+
+      .logo img {
+         max-width: 200px;
+      }
+   }
+}
+
+ // OPENED SIDE MENU
+ .js-side-menu-open {
+   //disable scrolling on body
+   overflow: hidden !important;
+   height:100% !important;
+   // @include overlay;
+
+   section, footer {
+      position: relative;
+      z-index: -1111;
+   }
+   
+   .side-menu {
+      @include small {
+         top:0;
+         // height: auto;
+      }
+
+      // &__head {
+      //    @include flex;
+      // }
+      // &__inner {
+      //    display: block;
+      // }
+   }
+}

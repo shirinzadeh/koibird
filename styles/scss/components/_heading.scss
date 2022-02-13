@@ -1,0 +1,39 @@
+.heading {
+   text-align: center;
+
+   &__title {
+      font-size: 1.375rem;
+      text-transform: uppercase;
+   }
+
+   /* DOUBLE LINE TITLE */
+   &--line {
+      overflow: hidden;
+
+      .heading__title {
+         position: relative;
+         display: inline-block;
+         $mx: 2.155rem; //34.48px margin
+
+         &::before,
+         &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 1900px;
+            height: 5px;
+            @include transform(translateY(-50%));
+            background-color: $primary;
+         }
+
+         &::after { 
+            left: 100%;
+            margin-left: $mx; 
+         }
+         &::before { 
+            right: 100%;
+            margin-right: $mx;
+         }
+      }
+   }
+}

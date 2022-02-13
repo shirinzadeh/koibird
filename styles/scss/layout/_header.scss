@@ -1,0 +1,111 @@
+.header {
+   padding-top: 2.5rem;
+   padding-bottom: 1.8125rem; //29px
+
+   @include small {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+   }
+   
+   &__items {
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.6875rem; //27px
+
+      @include medium {
+         padding-bottom: 1.25rem;
+      }
+
+      @include xsmall {
+         flex-direction: column;
+         padding-bottom: .5rem;
+      }
+
+      .logo img{
+         @include large {
+            max-width: 200px;
+         }
+      }
+   }
+
+   &__search {
+      position: relative;
+
+      .input-search {
+         border-radius: 0;
+         padding: 0.3312rem 0 0.3312rem 1.5rem;
+         border: {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 1px solid $black;
+         };
+      }
+
+      button {
+         position: absolute;
+         left: 0;
+         top: 50%;
+         @include transform(translateY(-50%));
+      }
+
+      .icon-search {
+         font-size: 1.25rem;
+ 
+      }
+   }
+
+   &__userlink {
+      @include flex;
+      align-items: center;
+
+      @include xsmall {
+         width: 100%;
+         justify-content: space-between;
+         padding-top: .5rem
+      }
+
+      ul {
+         @include flex;
+         align-items: center;
+         margin-right: 3.7788rem;
+
+         @include medium {
+            margin-right: 2rem;
+         }
+
+         li {
+            a {
+               font-size: 0.75rem;
+               line-height: 0.875rem;
+               display: block;
+               height: 100%;
+               padding: 0 1rem;
+               border-right: 1px solid $black;
+            }
+
+            &:first-child a{
+               padding-left: 0;
+            }
+            &:last-child a{
+               padding-right: 0;
+               border-right: 0;
+            }
+         }
+      }
+
+      &__icons {
+         @include flex;
+         align-items: center;
+
+         > :not(:first-child) {
+            margin-left: 2rem;
+
+            @include medium {
+               margin-left: 1rem;
+            }
+         }  
+      }
+   }
+}

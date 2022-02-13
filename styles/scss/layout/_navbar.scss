@@ -1,0 +1,114 @@
+.header .navbar {
+   padding: 0;
+   justify-content: center;
+   @include large {
+      justify-content: space-between;
+   }
+   // &-collapse {
+   //    justify-content: center;
+
+   //    @include large {
+   //       justify-content: space-between;
+   //    }
+   // }
+
+   &-toggler {
+      padding: 0;
+      margin: 0;
+   }
+   
+   .nav-item {
+      .nav-link {
+         text-transform: uppercase;
+         padding: 0;
+      }
+
+      &:nth-last-child(-n+2) .dropdown-menu {
+         left: auto;
+         right: -1.5rem;
+
+         @include medium {
+            left: -1rem;
+            right: auto;
+         }
+      }
+   } 
+
+   .dropdown-toggle {
+      &::after { display: none; }
+   }
+
+   .dropdown-menu {
+      display:block;
+      visibility: hidden;
+      opacity: 0;
+      border: none;
+      padding: 0;
+      margin: 0;
+      left: -1.5rem;
+
+      @include medium {
+         display: none;
+         left: -1rem;
+      }
+
+      > div {
+         @include flex;
+         padding: 1.9375rem 4.125rem 1.9375rem 3.125rem;  //31px 66px 31px 50px 
+         margin-top: 29px;
+
+         @include large {
+            padding: 1.5rem 2.5rem;
+         }
+
+         @include xsmall {
+            flex-direction: column;
+         }
+
+         ul:first-child {
+            margin-right: 6.125rem;
+
+            @include large {
+               margin-right: 3rem;
+            }
+         }
+      }
+
+      .dropdown-item {
+         padding: 0.75rem 0;
+         position: relative;
+         text-transform: uppercase;
+         display: inline-block;
+         width: auto;
+
+         :is( &:hover,
+              &:focus,
+              &:active ) {
+            background-color: transparent;
+
+            &::after {
+               width: 100%;
+            }
+         }
+
+         &::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background-color: $primary;
+            @include transition(width .2s ease-out);
+         }
+      } // .dropdown-item
+   } // /.dropdown-menu
+}
+
+.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
+   display:block;
+   visibility: visible;
+   opacity: 1;
+   // transition: visibility 0s, opacity 0.3s linear;
+   @include transition-mult(visibility 0s , opacity 0.3s linear);
+ }

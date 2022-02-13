@@ -1,0 +1,46 @@
+// Color Variables
+$primary: #E0FF04;
+$gray: #999;
+$black: #000;
+$white: #fff;
+
+//Variables
+@mixin flex-center {
+   @include flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin flex-btwn {
+   @include flex;
+   justify-content: space-between;
+}
+ 
+@mixin overlay {
+   //background overlay
+   &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      opacity: .5;
+   }
+}
+
+@mixin dropdown-trngl {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 50%;
+   @include transform(translateY(-50%));
+   @include transition;
+   width: 0; 
+   height: 0; 
+   border-top: 5px solid transparent;
+   border-bottom: 5px solid transparent;
+   
+   border-left: 6px solid $gray-400;
+}

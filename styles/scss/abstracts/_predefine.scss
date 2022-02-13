@@ -1,0 +1,39 @@
+html {
+   width: 100%;
+   height: 100%;
+}
+
+body{
+   font-family: 'Work Sans', sans-serif;
+   line-height: 1.1875rem;
+}
+
+a {
+   color: $black; 
+
+   &:hover {
+      text-decoration: none;
+   }
+}
+
+// i { display: inline-block; }
+
+.btn[disabled] {
+   cursor: not-allowed !important;
+   filter: alpha(opacity=65);
+   opacity: .65;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+//Bootstrap classes
+.container {
+   @include extra-xlarge {
+      max-width: 85.208%;
+   }
+}
+
+.btn {
+   padding: 0;
+   border: none;
+}

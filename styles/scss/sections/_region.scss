@@ -1,0 +1,16 @@
+.region {
+   padding: 3rem 0;
+   margin-bottom: 7.5rem;
+
+   @include small {
+      margin-bottom: 3rem;
+      padding: 2rem 0;
+   }
+
+   &__title {
+      font-weight: bold;
+      line-height: 1rem;
+      letter-spacing: 0.2em;
+      text-align: center;
+   }
+}
